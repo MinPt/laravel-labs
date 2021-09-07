@@ -9,19 +9,20 @@ Products
 @endsection
 
 @section("page-content")
+
 <table>
     <tr>
       <th>Name</th>
       <th>Quantity</th>
     </tr>
+  @foreach ($products as $row)
+
     <tr>
-      <td>Book</td>
-      <td>24</td>
+      <td>{{ $row['name']}}</td>
+      <td>{{ $row['quantity']}}</td>
     </tr>
-    <tr>
-      <td>Meat</td>
-      <td>34</td>
-    </tr>
+  @endforeach
+
   </table>
 @endsection
 
