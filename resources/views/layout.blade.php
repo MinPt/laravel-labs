@@ -9,12 +9,23 @@
   <title>@yield("app-title")</title>
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid d-flex justify-content-between">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav ">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/about">About page</a>
+          <a class="nav-link" href="/products">Products</a>
+        </div>
+      </div>
+    </div>
+  </nav>
   <div class="container mt-5">
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About page</a></li>
-    <li><a href="/products">Products</a></li>
-  </ul>
+
   <h1>
     @yield("page-title")
   </h1>

@@ -21,4 +21,10 @@ Route::get('/', [PageController::class, 'home']);
 Route::get('/about', [PageController::class, 'about']);
 
 Route::get('/products', [ProductsController::class, 'index']);
+Route::post('/products', [ProductsController::class, 'store']);
+Route::get('/products/{id}/edit', [ProductsController::class, 'edit']);
+Route::patch('/products/{id}', [ProductsController::class, 'update']);
+
+
+Route::get('/products/create', [ProductsController::class, 'create']);
 Route::get('/products-json', [ProductsController::class, 'productsJson']);
