@@ -14,6 +14,7 @@ Products
       <th class="col">Name</th>
       <th class="col">Quantity</th>
       <th class="col"><a href="/products/create" class="btn btn-success">Add new product</a></th>
+      <th></th>
     </tr>
   @foreach ($products as $row)
 
@@ -21,6 +22,7 @@ Products
       <td>{{ $row['name']}}</td>
       <td>{{ $row['quantity']}}</td>
       <td><a href="/products/{{ $row->id }}/edit" class="btn btn-primary">Edit </a></td>
+      <td><a href="/products/{{ $row->id }}" class="btn btn-primary">See </a></td>
     </tr>
   @endforeach
 
