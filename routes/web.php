@@ -20,4 +20,5 @@ Route::get('/', [PageController::class, 'home']);
 
 Route::get('/about', [PageController::class, 'about']);
 
-Route::get('/products', [ProductsController::class, 'products']);
+Route::get('/products', [ProductsController::class, 'index']);
+Route::get('/products-json', [ProductsController::class, 'productsJson']);

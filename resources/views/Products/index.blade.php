@@ -4,13 +4,12 @@
 Products
 @endsection
 
-@section("page-title")
-Products
-@endsection
+@section("page-title", $title)
+
 
 @section("page-content")
 
-<table>
+<table class="table">
     <tr>
       <th>Name</th>
       <th>Quantity</th>

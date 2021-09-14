@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-    public function products(){
-        $products = [
-          ["name" => 'Book', "quantity" => 444],
-          ["name" => 'Meat', "quantity" => 34],
+    public function index(){
+      $products = Product::all()->sortBy("name");
+      return view('products/index', ['products' => $products, 'title' => 'Products']);
+    }
 
-        ];
-
-        return view('products', ['products' => $products]);
+    public function productsJson(){
+      return Product::all();
     }
 }
