@@ -39,7 +39,15 @@ Products
     </div>
   </div>
 </div>
-
+@if ($errors->any())
+    <div>
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <script>
   $(document).ready(function(){
     $("#delete-product").click(function(){
