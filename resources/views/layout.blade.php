@@ -22,6 +22,7 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
           <a class="nav-link" href="/about">About page</a>
           <a class="nav-link" href="/products">Products</a>
+          <a class="nav-link" href="/manufacturers">Manufacturers</a>
         </div>
       </div>
     </div>
@@ -33,6 +34,6 @@
   </h1>
   @yield("page-content")
   </div>
-  
+
 </body>
 </html>

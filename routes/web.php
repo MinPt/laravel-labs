@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\PageController;
-
+use App\Http\Controllers\ManufacturerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +27,6 @@ Route::get('/about', [PageController::class, 'about']);
 // Route::get('/products/{id}/edit', [ProductsController::class, 'edit']);
 // Route::patch('/products/{id}', [ProductsController::class, 'update']);
 // Route::get('/products/create', [ProductsController::class, 'create']);
-
+Route::resource('/manufacturers', ManufacturerController::class);
 Route::resource('/products',  ProductsController::class);
 Route::get('/products-json', [ProductsController::class, 'productsJson']);
