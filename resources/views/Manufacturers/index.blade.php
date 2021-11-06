@@ -20,7 +20,7 @@
                 <td>{{ $manufacturer->Country }}</td>
                 <td>
                     <a class="btn btn-primary" href="/manufacturers/{{ $manufacturer->id }}">See</a>
-                    <a class="btn btn-success" href="/manufacturers/{{ $manufacturer->id }}">Edit</a>
+                    <a class="btn btn-success" href="/manufacturers/{{ $manufacturer->id }}/edit">Edit</a>
                 </td>
             </tr>
         @endforeach

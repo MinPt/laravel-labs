@@ -42,11 +42,7 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
-        $data = request()->validate([
-            'name'=>'required|min:3|max:40',
-            'Country'=>'required|min:3|max:40',
-            'product_id'=>['required', \Illuminate\Validation\Rule::exists('products', 'id')]
-        ]);
+        $data = $this->validateData($request);
         $manufacturer = new Manufacturer();
         $manufacturer->name = $data['name'];
         $manufacturer->Country = $data['Country'];
@@ -63,6 +59,7 @@ class ManufacturerController extends Controller
      */
     public function show(Manufacturer $manufacturer)
     {
+
         return view('manufacturers/show', [
             'manufacturer' => $manufacturer
         ]);
@@ -76,7 +73,10 @@ class ManufacturerController extends Controller
      */
     public function edit(Manufacturer $manufacturer)
     {
-        //
+        return view('manufacturers/edit', [
+            'manufacturer' => $manufacturer,
+            'products' => Product::all()->sortBy('name')
+        ]);
     }
 
     /**
@@ -99,6 +99,15 @@ class ManufacturerController extends Controller
      */
     public function destroy(Manufacturer $manufacturer)
     {
-        //
+        $manufacturer->delete();
     }
+
+    public function validateData($data){
+        return $this->validate($data, [
+            'name'=>'required|min:3|max:40',
+            'Country'=>'required|min:3|max:40',
+            'product_id'=>['required', \Illuminate\Validation\Rule::exists('products', 'id')]
+        ]) ;
+    }
+
 }
